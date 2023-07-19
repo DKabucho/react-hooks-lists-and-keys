@@ -1,4 +1,5 @@
 import React from "react";
+import ColorItem from "./ColorItem";
 
 function ColorList() {
   const colors = [
@@ -9,6 +10,9 @@ function ColorList() {
     "hotpink",
   ];
 
+  const colorElements = colors.map((color) => {
+    return <ColorItem key={color} color={color} />;
+  });
   return (
     <div>
       <h1>Top 5 CSS Colors</h1>
@@ -18,6 +22,7 @@ function ColorList() {
         <li style={{ color: colors[2] }}>{colors[2]}</li>
         <li style={{ color: colors[3] }}>{colors[3]}</li>
         <li style={{ color: colors[4] }}>{colors[4]}</li>
+        {colorElements}
       </ol>
     </div>
   );
